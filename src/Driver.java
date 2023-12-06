@@ -21,14 +21,6 @@ public class Driver {
         studentsList = new ArrayList<>();
         input = new Scanner(System.in);
 
-        // Add Some Students (Just for demonstrations)
-        studentsList.add(new Student("Albert", "Adamson", 2004, 2, 6));
-        studentsList.get(0).setGrades(new float[] {98.0f, 100.0f, 94.6f, 100.0f});
-        studentsList.add(new Student("Thomas", "Jefferson", 1743, 4, 13));
-        studentsList.get(1).addGrade(87.6f);
-        studentsList.add(new Student("George", "Washington", 1732, 2, 22));
-        studentsList.get(2).addGrade(93.8f);
-
         // Program Loop
         do {
 
