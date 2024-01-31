@@ -181,9 +181,21 @@ public class Driver {
         if(userInput.equals("n"))
             return; // No change to the birthday
 
-        int year = getNextInt("Current Birth Year: " + chosenStudent.getBirthday().getYear());
-        int month = getNextInt("Current Birth Month: " + chosenStudent.getBirthday().getMonthValue());
-        int day = getNextInt("Current Birth Day: " + chosenStudent.getBirthday().getDayOfMonth());
+        // Get the Year, Month, and Day
+        // Get the year, there are no restrictions. Users could add a negative number if they really wanted too.
+        int year = getNextInt("What is the birth year?");
+        // Get the month
+        int month = getNextInt("What is the birth month? (Please use the numeric representation)");
+        while(month >= 13 || month <= 0) {
+            month = getNextInt("Please choose a month between 1-12");
+        }
+        // Determine the max number of days within the chosen month
+        int maxDay = getMaxDay(month);
+        // Get the Day
+        int day = getNextInt("What is the day?");
+        while(day <= 0 || day > maxDay) {
+            day = getNextInt("Please choose a day between 1 and " + maxDay);
+        }
 
         chosenStudent.setBirthday(year, month, day);
 
